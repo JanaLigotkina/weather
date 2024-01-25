@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ApiWeather</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
+
+<body>
+<p>
+  <a href="/weather/current">Current Weather</a> |
+  <a href="/weather/historical">24 hours weather</a> |
+  <a href="/weather/historical/max">Max Temperature</a> |
+  <a href="/weather/historical/min">Min Temperature</a> |
+  <a href="/weather/historical/avg">Average Temperature</a> |
+  <a href="health">Status backend</a> |
+</p>
+
+<h2>Get weather by date</h2>
+<%= form_with url: by_time_weather_path, method: :get do |form| %>
+  <%= form.date_field :date, required: true %>
+  <%= form.time_field :time, required: true %>
+  <%= form.submit 'Get Weather' %>
+<% end %>
+<%= yield %>
+</body>
+</html>

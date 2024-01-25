@@ -1,0 +1,10 @@
+<h1>Historical Weather Data</h1>
+
+<% @historical_hourly_data.each do |data| %>
+  <p>
+    Date: <%= data['LocalObservationDateTime'] %> <br>
+    Temperature: <%= data['Temperature']['Metric']['Value'] %> <%= data['Temperature']['Metric']['Unit'] %> <br>
+    Weather: <%= data['WeatherText'] %>
+  </p>
+<% end %>
+

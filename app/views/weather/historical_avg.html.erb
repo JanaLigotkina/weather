@@ -1,0 +1,9 @@
+<h1>Avg Temperature</h1>
+
+<% sum = 0 %>
+<% count = 0 %>
+<% @historical_hourly_data.each do |data| %>
+  <% sum += data["Temperature"]["Metric"]["Value"] %>
+  <% count += 1 %>
+<% end %>
+<p>Avg Temperature = <%= (sum/count).round(2) %></p>
