@@ -10,5 +10,5 @@ Rails.application.routes.draw do
     get 'historical/avg', to: 'weather#historical_avg'
   end
 
-  get "health" => 'health#show'
+  get '/health', to: 'application#health'
 end
