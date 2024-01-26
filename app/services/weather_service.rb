@@ -1,16 +1,13 @@
-class WeatherService
-  BASE_URL = 'http://dataservice.accuweather.com/'
-  PART_URL_CURRENT = 'currentconditions/v1/'
-  PART_URL_FORECAST = 'forecasts/v1/daily/1day/'
-  PART_HISTORICAL = '/historical/24'
-  LOCATION_ID = '294021' # Moscow
-  API_KEY = 'Pr5CxVQyD0UhpAEYa9hADOeaKa0SFKWG'
-  METRIC = 'true'
+require 'net/http'
+require 'json'
 
+class WeatherService
+  include Constants
+  
   def get_data
     uri = URI(url)
-    # response = Net::HTTP.get(uri)
-    # JSON.parse(response)
+    response = Net::HTTP.get(uri)
+    JSON.parse(response)
   end
 
   def closest_to(time)

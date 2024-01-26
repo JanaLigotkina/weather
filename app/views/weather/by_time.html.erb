@@ -1,4 +1,7 @@
 <h1>By time</h1>
 
-<p>@epoch_time <%= @epoch_time %></p>
-<p>@weather <%= @weather %></p>
+<p>
+  Date: <%= weather[:date] %> <br>
+  Temperature: <%= weather[:temperature] %> <%= weather[:temperature_unit] %><br>
+  Weather: <%= weather[:weather] %>
+</p>

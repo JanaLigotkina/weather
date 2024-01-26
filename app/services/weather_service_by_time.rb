@@ -4,10 +4,7 @@ class WeatherServiceByTime < WeatherService
   end
 
   def closest_to(time)
-    @historical_hourly_data.each do |item|
-      return item["Temperature"]["Metric"]["Value"] if item['EpochTime'] == time.to_i
-    end
-
-    nil
+    formatter = WeatherDataFormatter.new(@historical_hourly_data, time: time)
+    formatter.format
   end
 end

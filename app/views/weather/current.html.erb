@@ -1,7 +1,11 @@
 <h1>Current Weather</h1>
 
-<!--<p>Temperature: <%#= @current_data[0]['Temperature']['Metric']['Value'] %>-->
-<!--<p>Unit: <%#= @current_data[0]['Temperature']['Metric']['Unit'] %>-->
+<% formatted_data.each do |data| %>
+  <p>
+    Date: <%= data[:date] %><br>
+    Temperature: <%= data[:temperature] %> <%= data[:temperature_unit] %><br>
+    Weather: <%= data[:weather] %>
+  </p>
+<% end %>
 
-<p>Temperature: <%= @current_data %>
 
