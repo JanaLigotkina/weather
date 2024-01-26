@@ -1,0 +1,7 @@
+version: '2'
+services:
+  redis:
+    image: 'redis:latest'
+    command: redis-server --maxmemory-policy volatile-ttl
+    ports:
+      - 6379:6379
