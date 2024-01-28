@@ -1,6 +1,6 @@
 class WeatherServiceHistoricalDetails < WeatherService
   def url
-    "#{BASE_URL}#{PART_URL_FORECAST}#{LOCATION_ID}?apikey=#{API_KEY}%20&metric=#{METRIC}"
+    "#{BASE_URL}#{PART_URL_FORECAST}#{LOCATION_ID}?apikey=#{API_KEY}&metric=#{METRIC}"
   end
 
   def cache_key

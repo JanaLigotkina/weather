@@ -14,5 +14,7 @@ gem "tzinfo-data"
 gem "bootsnap", require: false
 
 group :development, :test do
-  gem "debug"
+  gem 'rspec-rails'
+  gem 'vcr'
+  gem 'webmock'
 end
